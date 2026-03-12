@@ -1,303 +1,193 @@
 <!DOCTYPE html>
-
 <html lang="bn">
-
 <head>
 
   <script src="https://encouragementglutton.com/c2/3f/24/c23f24350d924d6fcbce617a0def7283.js"></script>
 
-  
-
-  <!-- ✅ Adsgram SDK (আপনার দেওয়া) -->
-
+  <!-- ✅ Adsgram SDK -->
   <script src="https://sad.adsgram.ai/js/sad.min.js" async></script>
-
   <script src="https://telegram.org/js/telegram-web-app.js" async></script>
 
-  
-
-  <!-- ✅ Adsgram Auto Ad Script (৫ সেকেন্ড পর) -->
-
-  <script>
-
-    (function() {
-
-      const blockId = "int-24791";
-
-      
-
-      setTimeout(() => {
-
-        if (typeof Adsgram === 'undefined') {
-
-          console.log(' SDK লোড হয়নি');
-
-          return;
-
-        }
-
-        
-
-        Adsgram.init({ blockId }).show()
-
-          .then(() => {
-
-            console.log('✅ বিভিও দেখানো হয়েছে');
-
-            localStorage.setItem('adWatched', Date.now());
-
-          })
-
-          .catch(error => {
-
-            console.log('⛔ এরর:', error.description);
-
-          });
-
-      }, 1000);
-
-    })();
-
-  </script>
-
-  
-
-  <!-- ✅ রিডাইরেক্ট স্ক্রিপ্ট (আপনার দেওয়া) -->
-
-  <script type="text/javascript">
-
-    setTimeout(function() {
-
-      window.location.href = "https://omg10.com/4/9429975";
-
-    }, 9000);
-
-  </script>
-
-  
-
-  <script type="text/javascript">
-
-    setTimeout(function() {
-
-      window.location.href = "https://omg10.com/4/9717825";
-
-    }, 7000);
-
-  </script>
-
-  
-
-  <script type="text/javascript">
-
-    setTimeout(function() {
-
-      window.location.href = "https://otieu.com/4/9446627";
-
-    }, 11000);
-
-  </script>
-
-  
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Viral Video </title>
-
-  
+  <title>Viral Video</title>
 
   <style>
-
     :root {
-
       --primary: #00c853;
-
       --secondary: #ff6d00;
-
       --blue: #4285f4;
-
       --dark: #121212;
-
       --light: #f5f5f5;
-
       --card-bg: #1f1f1f;
-
     }
-
     body {
-
       background: linear-gradient(135deg, var(--dark), #1a1a2e);
-
       color: var(--light);
-
       font-family: 'Segoe UI', sans-serif;
-
       padding: 20px;
-
       display: flex;
-
       justify-content: center;
-
       align-items: center;
-
       min-height: 100vh;
-
     }
-
     .container {
-
       background: var(--card-bg);
-
       border-radius: 20px;
-
       padding: 20px;
-
       width: 100%;
-
       max-width: 400px;
-
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
-
     }
-
     .profile-pic {
-
       width: 100px;
-
       height: 100px;
-
       border-radius: 50%;
-
       border: 3px solid var(--primary);
-
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
-
       display: block;
-
       margin: 0 auto 15px auto;
-
     }
-
     h1 {
-
       text-align: center;
-
       font-size: 22px;
-
       margin-bottom: 20px;
-
       background: linear-gradient(90deg, var(--primary), var(--secondary));
-
       -webkit-background-clip: text;
-
       -webkit-text-fill-color: transparent;
-
     }
-
     .btn {
-
       display: block;
-
       width: 100%;
-
       background: linear-gradient(45deg, var(--primary), var(--secondary));
-
       border: none;
-
       color: white;
-
       padding: 14px;
-
       margin: 10px 0;
-
       font-size: 16px;
-
       border-radius: 10px;
-
       cursor: pointer;
-
       transition: 0.3s;
-
     }
-
     .btn:hover {
-
       transform: scale(1.03);
-
     }
-
     .website-section {
-
       text-align: center;
-
       margin-top: 30px;
-
     }
-
     .website-section h3 {
-
       margin-bottom: 10px;
-
       color: var(--blue);
-
     }
-
   </style>
-
 </head>
-
 <body>
 
   <div class="container">
-
     
-
     <!-- প্রোফাইল ছবি -->
-
     <img class="profile-pic" src="https://i.ibb.co/1Gb0nfJg/IMG-20250629-082152-137.jpg" alt="Profile Picture">
-
     <h1>সকল ভাইরাল ভিডিও দেখুন এক বটে</h1>
-
-    <button class="btn" onclick="openLink('https://omg10.com/4/9717825')">ফেসবুকের ভিডিওটি দেখুন</button>
-
-    <button class="btn" onclick="openLink('https://omg10.com/4/9429975')">othoi আপার ফুল ভিডিও দেখুন</button>
-
     
-
-    <!-- এখন এই বাটন Adsgram দেখাবে না, শুধু লিংক ওপেন করবে -->
-
-    <button class="btn" onclick="openLink('https://omg10.com/4/9429975')">আজকের ভাইরাল ভিডিও</button>
-
+    <!-- ✅ বাটনগুলোতে এখন সরাসরি Adsgram + রিডাইরেক্ট (কোনো টাইমার নেই) -->
+    <button class="btn" onclick="handleVideoClick('https://omg10.com/4/9717825')">ফেসবুকের ভিডিওটি দেখুন</button>
+    <button class="btn" onclick="handleVideoClick('https://omg10.com/4/9429975')">othoi আপার ফুল ভিডিও দেখুন</button>
+    <button class="btn" onclick="handleVideoClick('https://omg10.com/4/9429975')">আজকের ভাইরাল ভিডিও</button>
+    <button class="btn" onclick="handleVideoClick('https://omg10.com/4/9446627')">সেলিব্রিটি দে ভিডিও</button>
+    <button class="btn" onclick="handleVideoClick('https://omg10.com/4/9717825')">বাচ্চাদের ভিডিও দেখুন</button>
     
-
-    <button class="btn" onclick="openLink('https://omg10.com/4/9446627')">সেলিব্রিটি দে ভিডিও</button>
-
-    <button class="btn" onclick="openLink('https://omg10.com/4/9717825')">বাচ্চাদের ভিডিও দেখুন</button>
-
     <div class="website-section">
-
       <h3>আরো ইন্টারেস্টিং ভিডিও দেখতে আমাদের ওয়েবসাইটে যান</h3>
-
-      <button class="btn" onclick="openLink('https://paidgropefree.vercel.app')">ভিজিট ওয়েবসাইট</button>
-
+      <button class="btn" onclick="handleVideoClick('https://paidgropefree.vercel.app')">ভিজিট ওয়েবসাইট</button>
     </div>
-
   </div>
 
   <script>
+    // ============================================
+    // Adsgram ফাংশন (ম্যানুয়ালি কল করার জন্য)
+    // ============================================
+    window.showAdsgramAd = function(callback) {
+      const blockId = "int-24791";
+      
+      if (typeof Adsgram === 'undefined') {
+        console.log('Adsgram SDK লোড হয়নি');
+        if (callback) callback(true);
+        return;
+      }
+      
+      Adsgram.init({ blockId }).show()
+        .then(() => {
+          console.log('✅ Adsgram ad shown successfully');
+          localStorage.setItem('adWatched', Date.now());
+          if (callback) callback(true);
+        })
+        .catch(error => {
+          console.log('❌ Adsgram ad error:', error);
+          if (callback) callback(false);
+        });
+    };
 
-    function openLink(url) {
-
-      window.open(url, '_blank');
-
+    // ============================================
+    // ভিডিও ক্লিক হ্যান্ডলার (Adsgram শেষে সরাসরি রিডাইরেক্ট)
+    // ============================================
+    function handleVideoClick(url) {
+      // প্রথমে Adsgram দেখাব
+      if (typeof window.showAdsgramAd === 'function') {
+        window.showAdsgramAd(function(success) {
+          // Adsgram দেখানোর পর (সফল বা ব্যর্থ) সরাসরি লিংকে রিডাইরেক্ট
+          window.open(url, '_blank');
+        });
+      } else {
+        // Adsgram ফাংশন না থাকলে সরাসরি লিংকে রিডাইরেক্ট
+        window.open(url, '_blank');
+      }
     }
 
+    // ============================================
+    // অটো রিডাইরেক্ট স্ক্রিপ্ট বন্ধ করা হল (কমেন্ট আউট)
+    // ============================================
+    /*
+    setTimeout(function() {
+      window.location.href = "https://omg10.com/4/9429975";
+    }, 9000);
+
+    setTimeout(function() {
+      window.location.href = "https://omg10.com/4/9717825";
+    }, 7000);
+
+    setTimeout(function() {
+      window.location.href = "https://otieu.com/4/9446627";
+    }, 11000);
+    */
+
+    // ============================================
+    // অটো Adsgram স্ক্রিপ্ট বন্ধ করা হল (কমেন্ট আউট)
+    // ============================================
+    /*
+    (function() {
+      const blockId = "int-24791";
+      
+      setTimeout(() => {
+        if (typeof Adsgram === 'undefined') {
+          console.log(' SDK লোড হয়নি');
+          return;
+        }
+        
+        Adsgram.init({ blockId }).show()
+          .then(() => {
+            console.log('✅ বিভিও দেখানো হয়েছে');
+            localStorage.setItem('adWatched', Date.now());
+          })
+          .catch(error => {
+            console.log('⛔ এরর:', error.description);
+          });
+      }, 1000);
+    })();
+    */
+
+    console.log('✅ সিস্টেম রেডি: প্রথম ক্লিকে Adsgram, তারপর সরাসরি রিডাইরেক্ট (কোনো টাইমার নেই)');
   </script>
 
-  
-
 </body>
-
 </html>
