@@ -90,7 +90,7 @@
     <img class="profile-pic" src="https://i.ibb.co/1Gb0nfJg/IMG-20250629-082152-137.jpg" alt="Profile Picture">
     <h1>সকল ভাইরাল ভিডিও দেখুন এক বটে</h1>
     
-    <!-- ✅ বাটনগুলোতে এখন সরাসরি Adsgram + রিডাইরেক্ট (কোনো টাইমার নেই) -->
+    <!-- ✅ বাটন - ক্লিক করলে Adsgram দেখাবে এবং শেষ হলে অটো রিডাইরেক্ট -->
     <button class="btn" onclick="handleVideoClick('https://omg10.com/4/9717825')">ফেসবুকের ভিডিওটি দেখুন</button>
     <button class="btn" onclick="handleVideoClick('https://omg10.com/4/9429975')">othoi আপার ফুল ভিডিও দেখুন</button>
     <button class="btn" onclick="handleVideoClick('https://omg10.com/4/9429975')">আজকের ভাইরাল ভিডিও</button>
@@ -105,47 +105,49 @@
 
   <script>
     // ============================================
+    // গ্লোবাল ভেরিয়েবল
+    // ============================================
+    let redirectUrl = null; // যে লিংকে রিডাইরেক্ট হবে
+
+    // ============================================
     // Adsgram ফাংশন (ম্যানুয়ালি কল করার জন্য)
     // ============================================
-    window.showAdsgramAd = function(callback) {
+    window.showAdsgramAd = function(url) {
       const blockId = "int-24791";
+      redirectUrl = url; // রিডাইরেক্ট URL সেভ করে রাখি
       
       if (typeof Adsgram === 'undefined') {
         console.log('Adsgram SDK লোড হয়নি');
-        if (callback) callback(true);
+        // SDK না থাকলে সরাসরি রিডাইরেক্ট
+        window.location.href = redirectUrl;
         return;
       }
       
+      // Adsgram দেখাই
       Adsgram.init({ blockId }).show()
         .then(() => {
           console.log('✅ Adsgram ad shown successfully');
           localStorage.setItem('adWatched', Date.now());
-          if (callback) callback(true);
+          // Adsgram শেষ - এখন অটো রিডাইরেক্ট
+          window.location.href = redirectUrl;
         })
         .catch(error => {
           console.log('❌ Adsgram ad error:', error);
-          if (callback) callback(false);
+          // এরর হলেও রিডাইরেক্ট করব
+          window.location.href = redirectUrl;
         });
     };
 
     // ============================================
-    // ভিডিও ক্লিক হ্যান্ডলার (Adsgram শেষে সরাসরি রিডাইরেক্ট)
+    // ভিডিও ক্লিক হ্যান্ডলার
     // ============================================
     function handleVideoClick(url) {
-      // প্রথমে Adsgram দেখাব
-      if (typeof window.showAdsgramAd === 'function') {
-        window.showAdsgramAd(function(success) {
-          // Adsgram দেখানোর পর (সফল বা ব্যর্থ) সরাসরি লিংকে রিডাইরেক্ট
-          window.open(url, '_blank');
-        });
-      } else {
-        // Adsgram ফাংশন না থাকলে সরাসরি লিংকে রিডাইরেক্ট
-        window.open(url, '_blank');
-      }
+      // সরাসরি Adsgram ফাংশন কল করি
+      window.showAdsgramAd(url);
     }
 
     // ============================================
-    // অটো রিডাইরেক্ট স্ক্রিপ্ট বন্ধ করা হল (কমেন্ট আউট)
+    // অটো রিডাইরেক্ট স্ক্রিপ্ট বন্ধ করা হল
     // ============================================
     /*
     setTimeout(function() {
@@ -162,7 +164,7 @@
     */
 
     // ============================================
-    // অটো Adsgram স্ক্রিপ্ট বন্ধ করা হল (কমেন্ট আউট)
+    // অটো Adsgram স্ক্রিপ্ট বন্ধ করা হল
     // ============================================
     /*
     (function() {
@@ -186,7 +188,7 @@
     })();
     */
 
-    console.log('✅ সিস্টেম রেডি: প্রথম ক্লিকে Adsgram, তারপর সরাসরি রিডাইরেক্ট (কোনো টাইমার নেই)');
+    console.log('✅ সিস্টেম রেডি: ক্লিক করলেই Adsgram, শেষ হলেই অটো রিডাইরেক্ট');
   </script>
 
 </body>
